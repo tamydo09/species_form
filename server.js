@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-const CSV_FILE = "C:/Users/tamdo/my-project/optional_species.csv";
+const CSV_FILE = path.join(__dirname, 'optional_species.csv');
 
 async function getAvailableSpecies() {
     const speciesList = [];
