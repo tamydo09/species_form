@@ -1,10 +1,16 @@
 import express from 'express';
 import fs from 'fs';
 import readline from 'readline';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 //const express = require('express');
 //const fs = require('fs');
 //const readline = require('readline');
+
+// Fix 2: Use absolute pathing so Linux/Render always finds the file in the project root
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
